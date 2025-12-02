@@ -1,0 +1,31 @@
+name: travel_app # ← REQUIRED! Project name
+description: A Flutter travel app with login and image assets
+version: 1.0.0+1
+
+# The environment section defines which Flutter/Dart versions are supported
+environment:
+  sdk: ">=2.19.0 <4.0.0"
+
+# Dependencies
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+# Flutter-specific settings
+flutter:
+  uses-material-design: true
+
+  # Include asset files
+  assets:
+    - assets/images/1.jpeg
+    - assets/images/2.jpeg
+    - assets/images/3.jpeg
+    - assets/images/4.jpeg
