@@ -48,14 +48,47 @@ class _ListViewDemoState extends State<ListViewDemo> {
           ),
         ),
         centerTitle: true,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16, top: 8),
-            child: Icon(
-              Icons.airplanemode_active,
-              color: Colors.white,
-              size: 26,
-            ),
+        // --------------------------------------------------------
+        // NEW ICON FEATURES (open-book friendly)
+        // Four icons added: search, favorite, settings, info
+        // Each has a SnackBar to show user feedback
+        // --------------------------------------------------------
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search, color: Colors.white, size: 26),
+            onPressed: () {
+              // TODO: implement search feature
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text("Search feature clicked")),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.favorite, color: Colors.redAccent, size: 26),
+            onPressed: () {
+              // TODO: implement favorite feature
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text("Favorite feature clicked")),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings, color: Colors.white, size: 26),
+            onPressed: () {
+              // TODO: implement settings feature
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text("Settings feature clicked")),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_outline, color: Colors.white, size: 26),
+            onPressed: () {
+              // TODO: implement info feature
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text("Info feature clicked")),
+              );
+            },
           ),
         ],
       ),
@@ -171,9 +204,17 @@ class _ListViewDemoState extends State<ListViewDemo> {
 // Q5: How do you add a shadow and border to a container?
 //     -> Check Container decoration with BoxShadow and Border.
 //
-// Q6: How can you add a booking feature for 1 to 20 nights?
-//     -> Update NewPage to include a DropdownButton or Stepper for number of nights.
-//        Pass the price to a function that multiplies nights * price.
+// Q6: How can you add icon features in the AppBar?
+//     -> Use IconButton widgets inside AppBar.actions and provide onPressed callbacks.
 //
-// Q7: How can you allow booking from 1 night to infinite?
-//     -> Use a TextField with validation for integer >=1 instead of a fixed max.
+// Q7: How do you provide feedback when an icon is tapped?
+//     -> Use ScaffoldMessenger.of(context).showSnackBar() for temporary messages.
+//
+// Q8: How do you style icons with different colors?
+//     -> Set color property in Icon widget; can dynamically change based on state.
+//
+// Q9: How to add 4 different icons without affecting list tiles or gradient?
+//     -> Simply add IconButton widgets in AppBar.actions; the gradient and list remain unchanged.
+//
+// Q10: How can you expand the functionality of each icon?
+//      -> Implement search, favorites, settings, info screens or popups in onPressed().
